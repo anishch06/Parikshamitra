@@ -1,0 +1,6 @@
+node_modules/
+.env
+.DS_Store       # macOS
+npm-debug.log
+yarn-error.log
+.vscode/         # Visual Studio Code settings
