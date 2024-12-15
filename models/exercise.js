@@ -6,6 +6,8 @@ const exerciseSchema = new mongoose.Schema({
     description: { type: String },
     difficulty: { type: String, enum: ['Easy', 'Medium', 'Hard'], default: 'Medium' },
     createdAt: { type: Date, default: Date.now },
+    marks: { type: Number },// — The marks awarded for the question.
+
   });
   
   module.exports = mongoose.model('Exercise', exerciseSchema);
