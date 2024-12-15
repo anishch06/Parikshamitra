@@ -8,6 +8,9 @@ const performanceAnalyticsSchema = new mongoose.Schema({
     strengths: [{ type: String }], // List of areas of strength
     weaknesses: [{ type: String }], // List of areas needing improvement
     updatedAt: { type: Date, default: Date.now },
+    accuracy: { type: Number },// — Accuracy of the student's performance (percentage)
+    overallGrade: { type: String, enum: ['A', 'B', 'C', 'D', 'F'] },// — Final grade based on performance.
+
   });
   
   module.exports = mongoose.model('PerformanceAnalytics', performanceAnalyticsSchema);
