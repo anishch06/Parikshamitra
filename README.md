@@ -31,85 +31,116 @@ http://localhost:3000
       [POST] http://localhost:3000/students<br>
      POST Request body sample <br>
      
-  {
-    "name": "Mary John",
-    "age": 20,
-    "email": "john.mary@example.com",
-    "enrolledCourses": [
-      "Math",
-      "Physics",
-      "Geography"
-    ],
-    "createdAt": "2024-12-11T10:30:00.000Z",
-    "__v": 0
-  }
+ {
+  "name": "Alice Johnson",
+  "age": 18,
+  "email": "alice.johnson@example.com",
+  "enrolledCourses": ["Biology101", "Chemistry202", "Mathematics301"],
+  "createdAt": "2024-12-12T14:20:00Z",
+  "phoneNumber": "9876543210",
+  "address": "123 Elm Street, Springfield, IL",
+  "profilePicture": "https://example.com/profiles/alice.jpg",
+  "status": "active",
+  "dateOfBirth": "2006-04-15",
+  "assignedTeacher": "63a5bc8c8f12345678abcd02",
+  "teacherFeedback": [
+    "Excellent participation in group discussions.",
+    "Needs to improve on time management for assignments."
+  ],
+  "fatherName": "Robert Johnson",
+  "motherName": "Sophia Johnson",
+  "guardianName": null,
+  "fatherContact": "9876543211",
+  "motherContact": "9876543212",
+  "guardianContact": null
+}
+
   <br><br>
   b)  [GET] http://localhost:3000/chapters<br>
     [POST] http://localhost:3000/chapters<br>
      POST Request body sample<br>
-  {
+ {
+  "courseId": "course101",
   "title": "Introduction to Algebra",
-  "course": "Math",
-  "content": "This chapter covers the basics of algebra including variables, equations, and expressions.",
-  "createdAt": "2024-12-11T10:45:00Z"
-  }
+  "description": "This chapter covers the basic principles of algebra, including variables, expressions, and equations.",
+  
+  "createdAt": "2024-12-14T10:00:00Z",
+  "duration": 2,
+  "resources": [
+    "https://example.com/algebra-introduction.pdf",
+    "https://example.com/algebra-video",
+    "https://example.com/interactive-algebra-tool"
+  ],
+  "isPublished": true
+}
+
 <br><br>
   c) [GET] http://localhost:3000/performanceAnalytics<br>
     [POST] http://localhost:3000/performanceAnalytics<br>
      POST Request body sample<br>
  {
-  "studentId": "60d7fd61c74f8f4f4c1d5f2b",
-  "totalTestsTaken": 5,
-  "averageScore": 90,
-  "highestScore": 95,
-  "lowestScore": 80,
-  "createdAt": "2024-12-11T12:15:00Z"
- }
+  "studentId": "63a5bc8c8f12345678abcd03",
+  "courseId": "course101",
+  "averageScore": 87.5,
+  "completionRate": 92,
+  "strengths": ["Problem Solving", "Conceptual Understanding"],
+  "weaknesses": ["Time Management", "Accuracy in Calculations"],
+  "updatedAt": "2024-12-14T15:30:00Z",
+  "accuracy": 85,
+  "overallGrade": "A"
+}
+
  <br><br>
   d) [GET] http://localhost:3000/question<br>
     [POST] http://localhost:3000/question<br>
      POST Request body sample<br>
  {
+  "exerciseId": "exercise001",
   "questionText": "What is the capital of France?",
-  "options": ["Berlin", "Madrid", "Paris", "Rome"],
+  "options": [
+  "Berlin",
+    "Madrid",
+    "Paris",
+    "Rome"
+  ],
   "correctAnswer": "Paris",
-  "subject": "Geography",
-  "createdAt": "2024-12-11T11:15:00Z"
- }
+  "type": "MCQ",
+  "createdAt": "2024-12-14T10:15:00Z",
+  "questionCount": 10
+}
+
  <br><br>
   e) [GET] http://localhost:3000/exercise<br>
     [POST] http://localhost:3000/exercise<br>
      POST Request body sample<br>
  {
-    {
-  "title": "Algebraic Equations Exercise",
-  "chapter": "Introduction to Algebra",
-  "questions": [
-    {
-      "questionText": "Solve for x: 2x + 5 = 15",
-      "options": ["x = 5", "x = 10", "x = 20", "x = 25"],
-      "correctAnswer": "x = 5"
-    },
-    {
-      "questionText": "What is 3x - 4 = 8?",
-      "options": ["x = 4", "x = 2", "x = 1", "x = 5"],
-      "correctAnswer": "x = 4"
-    }
-  ],
-  "createdAt": "2024-12-11T11:00:00Z"
-   }
+  "chapterId": "chapter001",
+  "title": "Introduction to Fractions",
+  "description": "This exercise focuses on understanding and solving basic problems related to fractions.",
+  "difficulty": "Easy",
+  "createdAt": "2024-12-14T11:30:00Z",
+  "marks": 10
+}
+
    <br><br>
    f) [GET] http://localhost:3000/testResults<br>
       [POST] http://localhost:3000/testResults<br>
        POST Request body sample<br>
- {
- {
-  "studentId": "60d7fd61c74f8f4f4c1d5f2b",
-  "testId": "60d7fd61c74f8f4f4c1d5f2c",
+{
+  "studentId": "63a5bc8c8f12345678abcd03",
+  "testId": "test12345",
+  "subject": "Mathematics",
+  "testType": "midterm",
   "score": 85,
-  "timeTaken": "30 minutes",
-  "createdAt": "2024-12-11T12:00:00Z"
- }
+  "maxScore": 100,
+  "timeTaken": 75,
+  "correctAnswers": 17,
+  "rank": 5,
+  "submittedAt": "2024-12-14T10:45:00Z",
+  "passStatus": true,
+  "testDate": "2024-12-13T00:00:00Z"
+}
+
    
 Technologies:<br>
 Node.js: JavaScript runtime for building the backend.<br>
