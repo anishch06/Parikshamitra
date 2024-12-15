@@ -7,6 +7,8 @@ const questionSchema = new mongoose.Schema({
     correctAnswer: { type: String, required: true }, // Correct option
     type: { type: String, enum: ['MCQ', 'Descriptive'], default: 'MCQ' }, // Question type
     createdAt: { type: Date, default: Date.now },
+    questionCount: { type: Number },// — Number of questions in the exercise.
+
   });
   
   module.exports = mongoose.model('Question', questionSchema);
